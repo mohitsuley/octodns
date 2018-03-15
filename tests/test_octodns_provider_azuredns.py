@@ -258,45 +258,45 @@ class TestAzureDnsProvider(TestCase):
         provider = self._get_provider()
 
         rs = []
-        rs.append(RecordSet(name='a1', ttl=0, type='A',
+        rs.append(RecordSet(ttl=0,
                             arecords=[ARecord('1.1.1.1')]))
-        rs.append(RecordSet(name='a2', ttl=1, type='A',
+        rs.append(RecordSet(ttl=1,
                             arecords=[ARecord('1.1.1.1'),
                                       ARecord('2.2.2.2')]))
-        rs.append(RecordSet(name='aaaa1', ttl=2, type='AAAA',
+        rs.append(RecordSet(ttl=2,
                             aaaa_records=[AaaaRecord('1:1ec:1::1')]))
-        rs.append(RecordSet(name='aaaa2', ttl=3, type='AAAA',
+        rs.append(RecordSet(ttl=3,
                             aaaa_records=[AaaaRecord('1:1ec:1::1'),
                                           AaaaRecord('1:1ec:1::2')]))
-        rs.append(RecordSet(name='cname1', ttl=4, type='CNAME',
+        rs.append(RecordSet(ttl=4,
                             cname_record=CnameRecord('cname.unit.test.')))
-        rs.append(RecordSet(name='cname2', ttl=5, type='CNAME',
+        rs.append(RecordSet(ttl=5,
                             cname_record=None))
-        rs.append(RecordSet(name='mx1', ttl=6, type='MX',
+        rs.append(RecordSet(ttl=6,
                             mx_records=[MxRecord(10, 'mx1.unit.test.')]))
-        rs.append(RecordSet(name='mx2', ttl=7, type='MX',
+        rs.append(RecordSet(ttl=7,
                             mx_records=[MxRecord(10, 'mx1.unit.test.'),
                                         MxRecord(11, 'mx2.unit.test.')]))
-        rs.append(RecordSet(name='ns1', ttl=8, type='NS',
+        rs.append(RecordSet(ttl=8,
                             ns_records=[NsRecord('ns1.unit.test.')]))
-        rs.append(RecordSet(name='ns2', ttl=9, type='NS',
+        rs.append(RecordSet(ttl=9,
                             ns_records=[NsRecord('ns1.unit.test.'),
                                         NsRecord('ns2.unit.test.')]))
-        rs.append(RecordSet(name='ptr1', ttl=10, type='PTR',
+        rs.append(RecordSet(ttl=10,
                             ptr_records=[PtrRecord('ptr1.unit.test.')]))
-        rs.append(RecordSet(name='ptr2', ttl=11, type='PTR',
+        rs.append(RecordSet(ttl=11,
                             ptr_records=[PtrRecord(None)]))
-        rs.append(RecordSet(name='_srv1._tcp', ttl=12, type='SRV',
+        rs.append(RecordSet(ttl=12,
                             srv_records=[SrvRecord(1, 2, 3, '1unit.tests.')]))
-        rs.append(RecordSet(name='_srv2._tcp', ttl=13, type='SRV',
+        rs.append(RecordSet(ttl=13,
                             srv_records=[SrvRecord(1, 2, 3, '1unit.tests.'),
                                          SrvRecord(4, 5, 6, '2unit.tests.')]))
-        rs.append(RecordSet(name='txt1', ttl=14, type='TXT',
+        rs.append(RecordSet(ttl=14,
                             txt_records=[TxtRecord('sample text1')]))
-        rs.append(RecordSet(name='txt2', ttl=15, type='TXT',
+        rs.append(RecordSet(ttl=15,
                             txt_records=[TxtRecord('sample text1'),
                                          TxtRecord('sample text2')]))
-        rs.append(RecordSet(name='', ttl=16, type='SOA',
+        rs.append(RecordSet(ttl=16,
                             soa_record=[SoaRecord()]))
 
         record_list = provider._dns_client.record_sets.list_by_dns_zone
@@ -364,9 +364,9 @@ class TestAzureDnsProvider(TestCase):
         provider = self._get_provider()
 
         rs = []
-        rs.append(RecordSet(name='a1', ttl=0, type='A',
+        rs.append(RecordSet(ttl=0,
                             arecords=[ARecord('1.1.1.1')]))
-        rs.append(RecordSet(name='a2', ttl=1, type='A',
+        rs.append(RecordSet(ttl=1,
                             arecords=[ARecord('1.1.1.1'),
                                       ARecord('2.2.2.2')]))
 
